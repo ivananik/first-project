@@ -87,3 +87,16 @@ try{
 catch(error){
 	console.log(error)
 }
+
+let arr = [];
+function arraySum(arr){
+let sumArr = 0;
+	for(i=0;i<arr.length;i++){
+		sumArr+=arr[i];
+		
+	}	
+	return sumArr;	}
+
+
+	console.log(arraySum([1,2,3,4]));
+	console.log(arraySum([2,3,18]));
