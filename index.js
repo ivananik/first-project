@@ -88,15 +88,65 @@ catch(error){
 	console.log(error)
 }
 
-let arr = [];
-function arraySum(arr){
-let sumArr = 0;
-	for(i=0;i<arr.length;i++){
-		sumArr+=arr[i];
-		
-	}	
-	return sumArr;	}
 
+let numbers = [];
+function sumOfNumbers(numbers){
+let sumOfNum =0;
+	for(i=0;i<numbers.length;i++){
+		if(numbers[i]==='' || numbers[i] ===true ||numbers[i]=== false ||  numbers[i]===undefined || numbers[i].length > 0){
+			throw "not only numbers";
+		}
 
-	console.log(arraySum([1,2,3,4]));
-	console.log(arraySum([2,3,18]));
+		else{
+			sumOfNum+=numbers[i];
+		}
+	}
+	if(numbers.length===0){
+		throw "array is empty";
+	}
+	else return sumOfNum;	
+	 
+}
+
+	try{
+		console.log(sumOfNumbers([1,2,5,8]));
+	}
+	catch(error){
+		console.log(error);
+	}
+
+	try{
+		console.log(sumOfNumbers([2,'a','a',8]));
+	}
+	catch(error){
+		console.log(error);
+	}
+
+	try{
+		console.log(sumOfNumbers([2,-2,5,8]));
+	}
+	catch(error){
+		console.log(error);
+	}
+
+	try{
+		console.log(sumOfNumbers([1,true,1]));
+	}
+	catch(error){
+		console.log(error);
+	}
+
+	try{
+		console.log(sumOfNumbers([5,,3]));
+	}
+	catch(error){
+		console.log(error);
+	}
+
+	try{
+		console.log(sumOfNumbers([]));
+	}
+	catch(error){
+		console.log(error);
+	}
+
