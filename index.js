@@ -88,23 +88,39 @@ catch(error){
 	console.log(error)
 }
 
+function validation(numbers){
 
-let numbers = [];
-function sumOfNumbers(numbers){
-let sumOfNum =0;
-	for(i=0;i<numbers.length;i++){
-		if(numbers[i]==='' || numbers[i] ===true ||numbers[i]=== false ||  numbers[i]===undefined || numbers[i].length > 0){
-			throw "not only numbers";
+let right = true;
+	
+		for(i  in numbers){
+	if(numbers[i]==='' || numbers[i] ===true ||numbers[i]=== false ||  numbers[i]===undefined || numbers[i].length > 0 ){
+			throw "not numbers";
+			right =false;
 		}
+
+		right = true;
+}
+	if(numbers.length === 0){
+		throw "empty";
+		right = false;
+	}
+
+		return right;
+}
+
+function sumOfNumbers(numbers){
+	let sumOfNum =0;
+	validation(numbers);
+	if(validation === false){
+		return false;
+	}
 
 		else{
+			for(i=0;i<numbers.length;i++){
 			sumOfNum+=numbers[i];
 		}
+		return sumOfNum;
 	}
-	if(numbers.length===0){
-		throw "array is empty";
-	}
-	else return sumOfNum;	
 	 
 }
 
