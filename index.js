@@ -1,80 +1,40 @@
-function validation(...numbers){	
+function isValid(...numbers){	
 	if(arguments.length===0){
-		throw "empty";
 		return false;
-
 	}
 
 	else {
 		for(i in arguments){
 			if( typeof arguments[i]=== 'undefined'  ||  typeof arguments[i] ==='string' ||  typeof arguments[i] ==='boolean'
 					|| arguments[i]===0){
-				throw "not numbers";
+
 				return false;
 			}
 		}
 	}
-	
-
-
 		return true;
 }
 
+
 function sumOfNumbers(...numbers){
-	let sumOfNum =0;
-	validation(...numbers);
-	if(validation === false){
+	let sum =0;
+	if(isValid(...numbers) ===false){
 		return false;
 	}
 
 		else{
 			for(i=0;i<numbers.length;i++){
-			sumOfNum += numbers[i];
+			sum += numbers[i];
 		}
-		return sumOfNum;
+		
+		return sum;
 	}
 	
 	 
 }
 
-	try{
-		console.log(sumOfNumbers(1,2));
-	}
-	catch(error){
-		console.log(error);
-	}
-
-	try{
-		console.log(sumOfNumbers(2,'a','a',8));
-	}
-	catch(error){
-		console.log(error);
-	}
-
-	try{
-		console.log(sumOfNumbers(2,-2,5,7));
-	}
-	catch(error){
-		console.log(error);
-	}
-
-	try{
-		console.log(sumOfNumbers(1,true,1));
-	}
-	catch(error){
-		console.log(error);
-	}
-
-	try{
-		console.log(sumOfNumbers(5,''));
-	}
-	catch(error){
-		console.log(error);
-	}
-
-	try{
-		console.log(sumOfNumbers());
-	}
-	catch(error){
-		console.log(error);
-	}
+	console.log(sum());	
+	console.log(sum(2,'a','a',8));
+	console.log(sum(1,2));
+	console.log(sum(2,-2,5,7));
+	console.log(sum(1,true,1));
