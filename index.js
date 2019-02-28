@@ -33,8 +33,8 @@ function sumOfNumbers(...numbers){
 	 
 }
 
-	console.log(sum());	
-	console.log(sum(2,'a','a',8));
-	console.log(sum(1,2));
-	console.log(sum(2,-2,5,7));
-	console.log(sum(1,true,1));
+	console.log(sumOfNumbers());	
+	console.log(sumOfNumbers(2,'a','a',8));
+	console.log(sumOfNumbers(1,2));
+	console.log(sumOfNumbers(2,-2,5,7));
+	console.log(sumOfNumbers(1,true,1));
