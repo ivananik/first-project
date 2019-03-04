@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 function isValid(...numbers){	
 	if(arguments.length===0){
 		return false;
@@ -38,3 +39,6 @@ function sumOfNumbers(...numbers){
 	console.log(sumOfNumbers(1,2));
 	console.log(sumOfNumbers(2,-2,5,7));
 	console.log(sumOfNumbers(1,true,1));
+=======
+console.log('Hello world');
+>>>>>>> e94f0a88e4e7e7a648d03c2ab9f8dc78face92ec
